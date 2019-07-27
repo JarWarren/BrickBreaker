@@ -79,7 +79,7 @@ enum BrickType {
 /// Color based on remaining hitpoints.
 enum BrickColor: Int {
     
-    case green
+    case green = 1
     case yellow
     case orange
     case red

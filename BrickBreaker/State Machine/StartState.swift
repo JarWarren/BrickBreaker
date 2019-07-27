@@ -38,12 +38,11 @@ class StartState: GKState {
     // MARK: - Custom Methods
     
     func startGame() {
-        guard let level = level else { return }
-        let bricks = level.bricks
+        let levelBricks = Level.one.bricks
         
         var index = 0
         
-        for levelBrick in bricks {
+        for levelBrick in levelBricks {
             let sceneBrick = scene?.childNode(withName: String(index)) as! Brick
             if let levelBrick = levelBrick {
                 sceneBrick.hitpoints = levelBrick.hitpoints

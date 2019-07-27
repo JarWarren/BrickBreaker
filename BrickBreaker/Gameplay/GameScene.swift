@@ -44,10 +44,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-//        stateMachine.update(deltaTime: currentTime)
-        if ball.position.y < player.position.y {
-            delegate?.endGame()
-        }
+        stateMachine.update(deltaTime: currentTime)
     }
     
     // MARK: - Custom Methods
@@ -83,9 +80,11 @@ extension GameScene: SKPhysicsContactDelegate {
     
     func didEnd(_ contact: SKPhysicsContact) {
         if let brick = contact.bodyA.node as? Brick {
+            print(brick.name as Any)
             self.removeChildren(in: [brick])
         }
         if let brick = contact.bodyB.node as? Brick {
+            print(brick.name as Any)
             self.removeChildren(in: [brick])
         }
     }

@@ -13,7 +13,21 @@ enum Level: Int {
     case two
     
     var bricks: [Brick?] {
-        let zero: Brick? = nil
-        return [zero]
+        switch self {
+        case .one:
+            return [nil, nil, nil, nil, nil, nil,
+                    nil, nil, nil, nil, nil, nil,
+                    nil, nil, nil, nil, nil, nil,
+                    nil, nil, nil, nil, nil, nil,
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1)]
+        case .two:
+            return [Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1)]
+        }
     }
 }
