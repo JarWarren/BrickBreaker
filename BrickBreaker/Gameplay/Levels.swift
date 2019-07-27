@@ -13,6 +13,10 @@ enum Level: Int {
     case two
     case three
     
+    var intValue: Int {
+        return self.rawValue
+    }
+    
     var bricks: [Brick?] {
         switch self {
         case .one:
@@ -20,15 +24,15 @@ enum Level: Int {
                     nil, nil, nil, nil, nil, nil,
                     nil, nil, nil, nil, nil, nil,
                     nil, nil, nil, nil, nil, nil,
-                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
-                    Brick(.metal), Brick(1), Brick(1), Brick(1), Brick(1), Brick(.metal)]
+                    nil, nil, nil, nil, nil, nil,
+                    nil, Brick(1), Brick(1), nil, nil, nil]
         case .two:
-            return [Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
-                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
-                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
-                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
-                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
-                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1)]
+            return [Brick(), Brick(), Brick(), Brick(), Brick(), Brick(),
+                    Brick(), Brick(), Brick(), Brick(), Brick(), Brick(),
+                    Brick(), Brick(), Brick(), Brick(), Brick(), Brick(),
+                    Brick(), Brick(), Brick(), Brick(), Brick(), Brick(),
+                    Brick(), Brick(), Brick(), Brick(), Brick(), Brick(),
+                    Brick(3), Brick(2), Brick(2), Brick(2), Brick(2), Brick(3)]
         case .three:
             return [Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
                     Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),

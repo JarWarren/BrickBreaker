@@ -86,12 +86,3 @@ enum BrickColor: Int {
         }
     }
 }
-
-/// Houses constant values.
-struct Constants {
-    
-    static let player = "player"
-    static let ball = "ball"
-    static let game = "Game"
-    static let gamescene = "GameScene"
-}

@@ -12,6 +12,7 @@ import GameplayKit
 class GameScene: SKScene {
     
     // MARK: - Properties
+    var currentLevel: Level?
     
     // sprites
     lazy var player = childNode(withName: Constants.player) as! SKSpriteNode
@@ -65,7 +66,7 @@ class GameScene: SKScene {
     
     func setupStateMachine() {
         // states
-        let start = StartState(scene: self, level: .one)
+        let start = StartState(scene: self)
         let active = ActiveState(scene: self)
         let end = EndState(scene: self)
         
@@ -76,7 +77,11 @@ class GameScene: SKScene {
     
     func hit(_ brick: Brick) {
         brick.hitpoints -= 1
-        guard brick.hitpoints > 0 else { self.removeChildren(in: [brick]); return }
+        guard brick.hitpoints > 0 else {
+            brick.isHidden = true
+            brick.physicsBody = nil
+            return
+        }
         brick.color = BrickColor(rawValue: brick.hitpoints)?.uiColor ?? SKColor.white
     }
 }

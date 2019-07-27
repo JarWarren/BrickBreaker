@@ -21,6 +21,7 @@
 		7EEAEE9C22EA4E93001A9303 /* ActiveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAEE9B22EA4E93001A9303 /* ActiveState.swift */; };
 		7EEAEE9E22EA4E9E001A9303 /* EndState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAEE9D22EA4E9E001A9303 /* EndState.swift */; };
 		7EEAEEA622ECA499001A9303 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAEEA522ECA499001A9303 /* Levels.swift */; };
+		7EEAEEA822ED16FE001A9303 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAEEA722ED16FE001A9303 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		7EEAEE9B22EA4E93001A9303 /* ActiveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveState.swift; sourceTree = "<group>"; };
 		7EEAEE9D22EA4E9E001A9303 /* EndState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndState.swift; sourceTree = "<group>"; };
 		7EEAEEA522ECA499001A9303 /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		7EEAEEA722ED16FE001A9303 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				7E16229722EA15620033BCB4 /* AppDelegate.swift */,
 				7E1622A422EA15630033BCB4 /* Assets.xcassets */,
 				7E1622A922EA15630033BCB4 /* Info.plist */,
+				7EEAEEA722ED16FE001A9303 /* Constants.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				7EEAEE9E22EA4E9E001A9303 /* EndState.swift in Sources */,
 				7E16229E22EA15620033BCB4 /* GameScene.swift in Sources */,
 				7EEAEE9A22EA4E59001A9303 /* StartState.swift in Sources */,
+				7EEAEEA822ED16FE001A9303 /* Constants.swift in Sources */,
 				7E1622B422EA1E670033BCB4 /* Bricks.swift in Sources */,
 				7EEAEE9C22EA4E93001A9303 /* ActiveState.swift in Sources */,
 				7E1622A022EA15620033BCB4 /* GameViewController.swift in Sources */,
