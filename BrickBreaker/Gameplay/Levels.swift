@@ -11,6 +11,7 @@ import Foundation
 enum Level: Int {
     case one = 1
     case two
+    case three
     
     var bricks: [Brick?] {
         switch self {
@@ -20,7 +21,7 @@ enum Level: Int {
                     nil, nil, nil, nil, nil, nil,
                     nil, nil, nil, nil, nil, nil,
                     Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
-                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1)]
+                    Brick(.metal), Brick(1), Brick(1), Brick(1), Brick(1), Brick(.metal)]
         case .two:
             return [Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
                     Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
@@ -28,6 +29,13 @@ enum Level: Int {
                     Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
                     Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
                     Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1)]
+        case .three:
+            return [Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(1), Brick(1), Brick(1), Brick(1), Brick(1), Brick(1),
+                    Brick(.metal), Brick(1), Brick(1), Brick(1), Brick(1), Brick(.metal)]
         }
     }
 }

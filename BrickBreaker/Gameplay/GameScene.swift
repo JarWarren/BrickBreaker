@@ -18,7 +18,6 @@ class GameScene: SKScene {
     lazy var ball = childNode(withName: Constants.ball) as! SKSpriteNode
     
     // gameplay
-    var board: Gameboard!
     var stateMachine: GKStateMachine!
     
     // MARK: - Lifecycle
@@ -74,6 +73,12 @@ class GameScene: SKScene {
         stateMachine = GKStateMachine(states: [start, active, end])
         stateMachine.enter(StartState.self)
     }
+    
+    func hit(_ brick: Brick) {
+        brick.hitpoints -= 1
+        guard brick.hitpoints > 0 else { self.removeChildren(in: [brick]); return }
+        brick.color = BrickColor(rawValue: brick.hitpoints)?.uiColor ?? SKColor.white
+    }
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -81,11 +86,15 @@ extension GameScene: SKPhysicsContactDelegate {
     func didEnd(_ contact: SKPhysicsContact) {
         if let brick = contact.bodyA.node as? Brick {
             print(brick.name as Any)
-            self.removeChildren(in: [brick])
+            if brick.type != .metal {
+                hit(brick)
+            }
         }
         if let brick = contact.bodyB.node as? Brick {
             print(brick.name as Any)
-            self.removeChildren(in: [brick])
+            if brick.type != .metal {
+                hit(brick)
+            }
         }
     }
 }
