@@ -9,27 +9,6 @@
 import Foundation
 import GameplayKit
 
-// MARK: - Board
-
-/// Holds an array of bricks which populate the screen, as well as the player's life total.
-struct Gameboard {
-    
-    var bricks: [Brick?]
-    var lives: Int
-    
-    init(bricks: [Brick?], lives: Int = 3) {
-        self.bricks = bricks
-        self.lives = lives
-    }
-    
-    /// Returns true when all bricks have been destroyed. Ignores metal bricks.
-    func noBricksLeft() -> Bool {
-        return bricks.filter { $0?.type != .metal }.compactMap { $0 }.isEmpty
-    }
-}
-
-// MARK: - Bricks
-
 /// Represents a brick on the board. Holds a hitpoint value.
 class Brick: SKSpriteNode {
     
@@ -37,7 +16,7 @@ class Brick: SKSpriteNode {
     var type: BrickType
     
     /// If no BrickType is specified, the brick will be .normal.
-    init(_ hitpoints: Int, _ type: BrickType = .normal) {        
+    init(_ hitpoints: Int = 1, _ type: BrickType = .normal) {        
         self.hitpoints = hitpoints
         self.type = type
         var color = SKColor.white
@@ -54,6 +33,10 @@ class Brick: SKSpriteNode {
         super.init(texture: nil,
                    color: color,
                    size: CGSize(width: 0, height: 0))
+    }
+    
+    convenience init(_ type: BrickType) {
+        self.init(1, type)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -79,7 +62,7 @@ enum BrickType {
 /// Color based on remaining hitpoints.
 enum BrickColor: Int {
     
-    case green
+    case green = 1
     case yellow
     case orange
     case red
@@ -102,13 +85,4 @@ enum BrickColor: Int {
             return #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         }
     }
-}
-
-/// Houses constant values.
-struct Constants {
-    
-    static let player = "player"
-    static let ball = "ball"
-    static let game = "Game"
-    static let gamescene = "GameScene"
 }

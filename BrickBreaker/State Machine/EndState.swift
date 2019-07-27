@@ -21,4 +21,28 @@ class EndState: GKState {
         self.scene = scene
         super.init()
     }
+    
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return stateClass == StartState.self
+    }
+    
+    override func update(deltaTime seconds: TimeInterval) {
+        // advance a level
+        guard let oldLevel = scene?.currentLevel?.intValue else { return }
+        scene?.currentLevel = Level(rawValue: oldLevel + 1)
+        // reset bricks
+        scene?.children.forEach {
+            if let brick = $0 as? Brick {
+                brick.isHidden = false
+                let body = SKPhysicsBody(rectangleOf: Constants.brickSize)
+                body.isDynamic = false
+                body.affectedByGravity = false
+                body.allowsRotation = false
+                body.friction = 0
+                body.restitution = 1
+                brick.physicsBody = body
+            }
+        }
+        stateMachine?.enter(StartState.self)
+    }
 }

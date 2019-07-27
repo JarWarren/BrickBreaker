@@ -14,11 +14,10 @@ class StartState: GKState {
     // MARK: - Properties
     
     var scene: GameScene?
-    var level: Level?
     
     // MARK: - Initializer
     
-    init(scene: GameScene, level: Level) {
+    init(scene: GameScene) {
         self.scene = scene
         super.init()
     }
@@ -38,19 +37,19 @@ class StartState: GKState {
     // MARK: - Custom Methods
     
     func startGame() {
-        guard let level = level else { return }
-        let bricks = level.bricks
+        guard let levelBricks = scene?.currentLevel?.bricks else { return }
         
         var index = 0
         
-        for levelBrick in bricks {
+        for levelBrick in levelBricks {
             let sceneBrick = scene?.childNode(withName: String(index)) as! Brick
             if let levelBrick = levelBrick {
                 sceneBrick.hitpoints = levelBrick.hitpoints
                 sceneBrick.type = levelBrick.type
                 sceneBrick.color = levelBrick.color
             } else {
-                scene?.removeChildren(in: [sceneBrick])
+                sceneBrick.isHidden = true
+                sceneBrick.physicsBody = nil
             }
             index += 1
         }

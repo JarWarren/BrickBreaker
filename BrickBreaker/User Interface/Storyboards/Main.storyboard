@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,16 +29,82 @@
                                     <action selector="startButtonTapped:" destination="uea-nT-6ei" eventType="touchUpInside" id="xOw-F4-i5D"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPO-as-PEY">
+                                <rect key="frame" x="48" y="92" width="99.5" height="99.5"/>
+                                <color key="backgroundColor" red="0.56288617849349976" green="0.82866877317428589" blue="0.96080833673477173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QPO-as-PEY" secondAttribute="height" multiplier="1:1" id="mWx-Tp-vGh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-dp-Z9g">
+                                <rect key="frame" x="48" y="714.5" width="99.5" height="99.5"/>
+                                <color key="backgroundColor" red="0.75254386660000006" green="0.88212066889999996" blue="0.62348568439999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mbc-dp-Z9g" secondAttribute="height" multiplier="1:1" id="d6j-A0-cmI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Level Select">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y9d-RC-dh7">
+                                <rect key="frame" x="279.5" y="92" width="86.5" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0Q-My-a9n">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="28"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-HP-nOV">
+                                        <rect key="frame" x="31.5" y="36" width="55" height="28"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alH-fW-g4i">
+                                <rect key="frame" x="266.5" y="714.5" width="99.5" height="99.5"/>
+                                <color key="backgroundColor" red="0.85425478219985962" green="0.49930864572525024" blue="0.63922107219696045" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="alH-fW-g4i" secondAttribute="height" multiplier="1:1" id="Snn-vd-oiT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <state key="normal" title="Shop">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gU4-aF-lig" firstAttribute="centerY" secondItem="A68-ja-BFf" secondAttribute="centerY" id="4K4-qO-pTb"/>
+                            <constraint firstItem="A68-ja-BFf" firstAttribute="bottom" secondItem="alH-fW-g4i" secondAttribute="bottom" constant="48" id="7tg-Gn-V0g"/>
+                            <constraint firstItem="QPO-as-PEY" firstAttribute="top" secondItem="A68-ja-BFf" secondAttribute="top" constant="48" id="B3p-2f-NeX"/>
                             <constraint firstItem="gU4-aF-lig" firstAttribute="centerX" secondItem="A68-ja-BFf" secondAttribute="centerX" id="ONb-Ak-smj"/>
+                            <constraint firstItem="A68-ja-BFf" firstAttribute="trailing" secondItem="alH-fW-g4i" secondAttribute="trailing" constant="48" id="TDZ-JB-tNw"/>
+                            <constraint firstItem="QPO-as-PEY" firstAttribute="width" secondItem="Xbv-7a-mrr" secondAttribute="width" multiplier="0.24" id="WDB-sn-5bf"/>
+                            <constraint firstItem="A68-ja-BFf" firstAttribute="trailing" secondItem="y9d-RC-dh7" secondAttribute="trailing" constant="48" id="XsY-bs-Am9"/>
+                            <constraint firstItem="A68-ja-BFf" firstAttribute="bottom" secondItem="mbc-dp-Z9g" secondAttribute="bottom" constant="48" id="YXQ-Uj-qln"/>
+                            <constraint firstItem="QPO-as-PEY" firstAttribute="leading" secondItem="A68-ja-BFf" secondAttribute="leading" constant="48" id="ZSL-eH-Qe4"/>
+                            <constraint firstItem="mbc-dp-Z9g" firstAttribute="leading" secondItem="A68-ja-BFf" secondAttribute="leading" constant="48" id="r8s-nZ-uUW"/>
+                            <constraint firstItem="alH-fW-g4i" firstAttribute="width" secondItem="Xbv-7a-mrr" secondAttribute="width" multiplier="0.24" id="vPx-vd-wVT"/>
+                            <constraint firstItem="y9d-RC-dh7" firstAttribute="top" secondItem="A68-ja-BFf" secondAttribute="top" constant="48" id="w8S-9i-qqE"/>
+                            <constraint firstItem="mbc-dp-Z9g" firstAttribute="width" secondItem="Xbv-7a-mrr" secondAttribute="width" multiplier="0.24" id="xaw-uU-5eS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A68-ja-BFf"/>
                     </view>
                     <navigationItem key="navigationItem" id="aUM-EP-CvS"/>
                     <connections>
+                        <outlet property="currencyLabel" destination="iyE-HP-nOV" id="9pa-xg-gju"/>
+                        <outlet property="levelLabel" destination="W0Q-My-a9n" id="J5v-wy-pcC"/>
+                        <outlet property="levelsButton" destination="mbc-dp-Z9g" id="Nev-G9-5S1"/>
+                        <outlet property="settingsButton" destination="QPO-as-PEY" id="AcX-KQ-kTk"/>
+                        <outlet property="shopButton" destination="alH-fW-g4i" id="S4k-qh-GVa"/>
                         <outlet property="startButton" destination="gU4-aF-lig" id="HsQ-1M-BAY"/>
                     </connections>
                 </viewController>

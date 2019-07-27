@@ -12,13 +12,13 @@ import GameplayKit
 class GameScene: SKScene {
     
     // MARK: - Properties
+    var currentLevel: Level?
     
     // sprites
     lazy var player = childNode(withName: Constants.player) as! SKSpriteNode
     lazy var ball = childNode(withName: Constants.ball) as! SKSpriteNode
     
     // gameplay
-    var board: Gameboard!
     var stateMachine: GKStateMachine!
     
     // MARK: - Lifecycle
@@ -44,10 +44,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-//        stateMachine.update(deltaTime: currentTime)
-        if ball.position.y < player.position.y {
-            delegate?.endGame()
-        }
+        stateMachine.update(deltaTime: currentTime)
     }
     
     // MARK: - Custom Methods
@@ -69,7 +66,7 @@ class GameScene: SKScene {
     
     func setupStateMachine() {
         // states
-        let start = StartState(scene: self, level: .one)
+        let start = StartState(scene: self)
         let active = ActiveState(scene: self)
         let end = EndState(scene: self)
         
@@ -77,16 +74,32 @@ class GameScene: SKScene {
         stateMachine = GKStateMachine(states: [start, active, end])
         stateMachine.enter(StartState.self)
     }
+    
+    func hit(_ brick: Brick) {
+        brick.hitpoints -= 1
+        guard brick.hitpoints > 0 else {
+            brick.isHidden = true
+            brick.physicsBody = nil
+            return
+        }
+        brick.color = BrickColor(rawValue: brick.hitpoints)?.uiColor ?? SKColor.white
+    }
 }
 
 extension GameScene: SKPhysicsContactDelegate {
     
     func didEnd(_ contact: SKPhysicsContact) {
         if let brick = contact.bodyA.node as? Brick {
-            self.removeChildren(in: [brick])
+            print(brick.name as Any)
+            if brick.type != .metal {
+                hit(brick)
+            }
         }
         if let brick = contact.bodyB.node as? Brick {
-            self.removeChildren(in: [brick])
+            print(brick.name as Any)
+            if brick.type != .metal {
+                hit(brick)
+            }
         }
     }
 }
