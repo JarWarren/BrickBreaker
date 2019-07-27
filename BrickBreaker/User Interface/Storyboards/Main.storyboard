@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uea-nT-6ei">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="iV3-1e-D8d">
+            <objects>
+                <viewController id="uea-nT-6ei" customClass="StartViewController" customModule="BrickBreaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xbv-7a-mrr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gU4-aF-lig">
+                                <rect key="frame" x="124.5" y="405" width="165" height="96"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="72"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="uea-nT-6ei" eventType="touchUpInside" id="xOw-F4-i5D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gU4-aF-lig" firstAttribute="centerY" secondItem="A68-ja-BFf" secondAttribute="centerY" id="4K4-qO-pTb"/>
+                            <constraint firstItem="gU4-aF-lig" firstAttribute="centerX" secondItem="A68-ja-BFf" secondAttribute="centerX" id="ONb-Ak-smj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A68-ja-BFf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aUM-EP-CvS"/>
+                    <connections>
+                        <outlet property="startButton" destination="gU4-aF-lig" id="HsQ-1M-BAY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7jV-Yp-brQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271.0144927536232" y="-184.15178571428569"/>
+        </scene>
+    </scenes>
+</document>
