@@ -61,6 +61,11 @@ class MainViewController: UIViewController {
         present(levelSelectVC, animated: false)
     }
     
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+        guard let settingsVC = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() else { return }
+        present(settingsVC, animated: false)
+    }
+    
     // MARK: - Custom Methods
     
     func revertTransformations() {
@@ -86,6 +91,6 @@ class MainViewController: UIViewController {
     
     func updateHUD() {
         levelLabel.text = "Level: \(Settings.shared.levels.current)"
-        currencyLabel.text = "🔸 \(Settings.shared.currencies.total)"
+        currencyLabel.text = "\(Settings.shared.currencies.total)"
     }
 }

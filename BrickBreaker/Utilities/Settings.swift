@@ -38,7 +38,7 @@ class Settings {
     }
     
     /// Saves data for Level completion and currency gained.
-    func saveStats() {
+    private func saveStats() {
         UserDefaults.standard.setValuesForKeys([Constants.maxLevel: levels.max,
                                                 Constants.currentLevel: levels.current,
                                                 Constants.totalCurrency: currencies.total])
@@ -55,13 +55,17 @@ class Settings {
         NotificationCenter.default.post(name: Notification.Name(Constants.level), object: nil)
     }
     
-    func updateLevelsAndLoot(to newCurrentLevel: Int) {
-        levels.current = newCurrentLevel
-        if levels.max < newCurrentLevel {
-            levels.max = newCurrentLevel
+    func autoSaveStats(currentLevel: Int) {
+        levels.current = currentLevel
+        if levels.max < currentLevel {
+            levels.max = currentLevel
         }
         currencies.total += currencies.current
         currencies.current = 0
         saveStats()
+    }
+    
+    func abortGame() {
+        currencies.current = 0
     }
 }
