@@ -39,7 +39,6 @@ class StartState: GKState {
     func startGame() {
         guard let levelBricks = scene?.currentLevel?.bricks,
             let ball = scene?.childNode(withName: Constants.ball) else { return }
-        
         var index = 0
         
         for levelBrick in levelBricks {

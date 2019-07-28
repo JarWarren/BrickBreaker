@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BbY-Yz-7zK">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Level View Controller-->
+        <scene sceneID="efh-oW-iLL">
+            <objects>
+                <viewController id="BbY-Yz-7zK" customClass="LevelViewController" customModule="BrickBreaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iQa-gL-jWx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lq7-tq-rUL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tMD-rX-oor">
+                                    <size key="itemSize" width="201" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="levelCell" id="pyV-u7-xuX" customClass="LevelCell" customModule="BrickBreaker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="201" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akf-kq-tfC">
+                                                    <rect key="frame" x="8" y="52" width="185" height="90"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="36"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="akf-kq-tfC" secondAttribute="trailing" id="AI9-UA-4Vo"/>
+                                            <constraint firstItem="akf-kq-tfC" firstAttribute="leading" secondItem="pyV-u7-xuX" secondAttribute="leadingMargin" id="VPM-0m-IjQ"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="akf-kq-tfC" secondAttribute="bottom" id="aVi-a4-9Go"/>
+                                            <constraint firstItem="akf-kq-tfC" firstAttribute="top" secondItem="pyV-u7-xuX" secondAttribute="topMargin" id="xa0-j4-atN"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="levelLabel" destination="akf-kq-tfC" id="oqD-K7-cMI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lq7-tq-rUL" firstAttribute="leading" secondItem="EOm-Nu-Kb4" secondAttribute="leading" id="14j-LU-405"/>
+                            <constraint firstItem="EOm-Nu-Kb4" firstAttribute="bottom" secondItem="lq7-tq-rUL" secondAttribute="bottom" id="bza-6A-0yT"/>
+                            <constraint firstItem="lq7-tq-rUL" firstAttribute="top" secondItem="EOm-Nu-Kb4" secondAttribute="top" id="i1b-1Y-et9"/>
+                            <constraint firstItem="EOm-Nu-Kb4" firstAttribute="trailing" secondItem="lq7-tq-rUL" secondAttribute="trailing" id="zhn-Mo-4m3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EOm-Nu-Kb4"/>
+                    </view>
+                    <connections>
+                        <outlet property="levelCollectionView" destination="lq7-tq-rUL" id="bMG-Qr-3Ch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSe-00-GNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="168.75"/>
+        </scene>
+    </scenes>
+</document>

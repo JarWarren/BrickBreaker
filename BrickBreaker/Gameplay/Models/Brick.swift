@@ -28,7 +28,7 @@ class Brick: SKSpriteNode {
         case .container:
             color = UIColor.clear
         case .metal:
-            color = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            color = BrickColor.metal.uiColor
         }
         super.init(texture: nil,
                    color: color,
@@ -67,6 +67,7 @@ enum BrickColor: Int {
     case red
     case purple
     case blue
+    case metal
     
     var uiColor: UIColor {
         switch self {
@@ -82,6 +83,8 @@ enum BrickColor: Int {
             return #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         case .blue:
             return #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        case .metal:
+            return #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         }
     }
 }

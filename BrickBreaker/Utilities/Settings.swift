@@ -50,6 +50,11 @@ class Settings {
         NotificationCenter.default.post(name: Notification.Name(Constants.currency), object: nil)
     }
     
+    func changeLevel(to level: Int) {
+        levels.current = level
+        NotificationCenter.default.post(name: Notification.Name(Constants.level), object: nil)
+    }
+    
     func updateLevelsAndLoot(to newCurrentLevel: Int) {
         levels.current = newCurrentLevel
         if levels.max < newCurrentLevel {
