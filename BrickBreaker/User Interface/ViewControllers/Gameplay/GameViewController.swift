@@ -42,14 +42,11 @@ class GameViewController: UIViewController {
             pauseButton.backgroundColor = BrickColor.green.uiColor
             pauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             
-            // TODO: Add two button subviews
-           
+            // TODO: move pause button to node
         } else {
             sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
             sender.backgroundColor = #colorLiteral(red: 1, green: 0.9568510652, blue: 0, alpha: 1)
             scene.isPaused = false
-            
-            // TODO: remove the button subviews
         }
     }
     

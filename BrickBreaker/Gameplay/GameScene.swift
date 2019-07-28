@@ -53,9 +53,6 @@ class GameScene: SKScene {
         // player
         player.position = CGPoint(x: 0, y: -frame.height / 2.4)
         
-        // ball
-        ball.physicsBody?.velocity = CGVector(dx: 400, dy: 400)
-        
         // screen border
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsBody?.restitution = 1
