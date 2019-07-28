@@ -24,16 +24,13 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingsButton.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        settingsButton.layer.borderWidth = 2
-        shopButton.layer.borderColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-        shopButton.layer.borderWidth = 2
-        levelsButton.layer.borderColor = #colorLiteral(red: 0.7189847827, green: 0.887085259, blue: 0.5935872197, alpha: 1)
-        levelsButton.layer.borderWidth = 2
+        
+        setupButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         revertTransformations()
         updateHUD()
     }
@@ -59,6 +56,11 @@ class MainViewController: UIViewController {
         })
     }
     
+    @IBAction func levelButtonTapped(_ sender: Any) {
+        guard let levelSelectVC = UIStoryboard(name: "LevelSelect", bundle: nil).instantiateInitialViewController() else { return }
+        present(levelSelectVC, animated: false)
+    }
+    
     // MARK: - Custom Methods
     
     func revertTransformations() {
@@ -71,6 +73,15 @@ class MainViewController: UIViewController {
         startButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         startButton.alpha = 1
         statsStackView.alpha = 1
+    }
+    
+    func setupButtons() {
+        settingsButton.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        settingsButton.layer.borderWidth = 2
+        shopButton.layer.borderColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        shopButton.layer.borderWidth = 2
+        levelsButton.layer.borderColor = #colorLiteral(red: 0.7189847827, green: 0.887085259, blue: 0.5935872197, alpha: 1)
+        levelsButton.layer.borderWidth = 2
     }
     
     func updateHUD() {

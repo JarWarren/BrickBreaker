@@ -66,6 +66,9 @@
                                         <state key="normal" title="Level">
                                             <color key="titleColor" red="0.75254386660000006" green="0.88212066889999996" blue="0.62348568439999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="levelButtonTapped:" destination="uea-nT-6ei" eventType="touchUpInside" id="uNy-Vv-J7d"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPO-as-PEY">
                                         <rect key="frame" x="244" y="0.0" width="98" height="29"/>

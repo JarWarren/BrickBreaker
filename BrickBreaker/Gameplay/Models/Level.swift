@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Level: Int {
+enum Level: Int, CaseIterable {
     case one = 1
     case two
     case three
@@ -16,6 +16,8 @@ enum Level: Int {
     var intValue: Int {
         return self.rawValue
     }
+    
+    static let totalLevels = 3
     
     var bricks: [Brick?] {
         switch self {
