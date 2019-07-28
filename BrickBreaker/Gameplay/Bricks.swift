@@ -28,7 +28,7 @@ class Brick: SKSpriteNode {
         case .container:
             color = UIColor.clear
         case .metal:
-            color = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            color = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         }
         super.init(texture: nil,
                    color: color,
@@ -40,8 +40,7 @@ class Brick: SKSpriteNode {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        // TODO: get rid of this.
-        hitpoints = 0
+        hitpoints = 1
         type = .normal
         super.init(coder: aDecoder)
     }

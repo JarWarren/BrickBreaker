@@ -30,6 +30,8 @@ class EndState: GKState {
         // advance a level
         guard let oldLevel = scene?.currentLevel?.intValue else { return }
         scene?.currentLevel = Level(rawValue: oldLevel + 1)
+        Settings.shared.updateLevelsAndLoot(to: (oldLevel + 1))
+        
         // reset bricks
         scene?.children.forEach {
             if let brick = $0 as? Brick {

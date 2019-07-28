@@ -54,7 +54,6 @@ class GameScene: SKScene {
         player.position = CGPoint(x: 0, y: -frame.height / 2.4)
         
         // ball
-        ball.position = CGPoint(x: player.position.x, y: player.position.y + 48)
         ball.physicsBody?.velocity = CGVector(dx: 400, dy: 400)
         
         // screen border
@@ -80,6 +79,7 @@ class GameScene: SKScene {
         guard brick.hitpoints > 0 else {
             brick.isHidden = true
             brick.physicsBody = nil
+            Settings.shared.addCurrency(amounts: (0, 1))
             return
         }
         brick.color = BrickColor(rawValue: brick.hitpoints)?.uiColor ?? SKColor.white
@@ -90,13 +90,11 @@ extension GameScene: SKPhysicsContactDelegate {
     
     func didEnd(_ contact: SKPhysicsContact) {
         if let brick = contact.bodyA.node as? Brick {
-            print(brick.name as Any)
             if brick.type != .metal {
                 hit(brick)
             }
         }
         if let brick = contact.bodyB.node as? Brick {
-            print(brick.name as Any)
             if brick.type != .metal {
                 hit(brick)
             }
