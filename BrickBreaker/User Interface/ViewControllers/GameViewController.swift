@@ -11,11 +11,29 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
+    // MARK: - Outlets and Properties
+    
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var currencyLabel: UILabel!
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupScene()
+        updateLevel()
+        updateCurrency()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCurrency), name: Notification.Name(Constants.currency), object: nil)
+    }
+    
+    // MARK: - Custom Methods
+    
+    func setupScene() {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: Constants.gamescene) as? GameScene {
@@ -33,9 +51,13 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
     }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
+    
+    func updateLevel() {
+        levelLabel.text = "Level: \(Settings.shared.levels.current)"
+    }
+    
+    @objc func updateCurrency() {
+        currencyLabel.text = "🔸 \(Settings.shared.currencies.current)"
     }
 }
 

@@ -11,48 +11,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Start View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="iV3-1e-D8d">
             <objects>
-                <viewController id="uea-nT-6ei" customClass="StartViewController" customModule="BrickBreaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uea-nT-6ei" customClass="MainViewController" customModule="BrickBreaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xbv-7a-mrr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gU4-aF-lig">
-                                <rect key="frame" x="124.5" y="405" width="165" height="96"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="72"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="99" y="698" width="216" height="54"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gU4-aF-lig" secondAttribute="height" multiplier="4:1" id="0TA-Hi-KIN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="36"/>
+                                <state key="normal" title="  start  ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="uea-nT-6ei" eventType="touchUpInside" id="xOw-F4-i5D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPO-as-PEY">
-                                <rect key="frame" x="48" y="92" width="99.5" height="99.5"/>
-                                <color key="backgroundColor" red="0.56288617849349976" green="0.82866877317428589" blue="0.96080833673477173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="QPO-as-PEY" secondAttribute="height" multiplier="1:1" id="mWx-Tp-vGh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-dp-Z9g">
-                                <rect key="frame" x="48" y="714.5" width="99.5" height="99.5"/>
-                                <color key="backgroundColor" red="0.75254386660000006" green="0.88212066889999996" blue="0.62348568439999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="mbc-dp-Z9g" secondAttribute="height" multiplier="1:1" id="d6j-A0-cmI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
-                                <state key="normal" title="Level Select">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y9d-RC-dh7">
-                                <rect key="frame" x="279.5" y="92" width="86.5" height="64"/>
+                                <rect key="frame" x="303.5" y="44" width="86.5" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0Q-My-a9n">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="28"/>
@@ -60,41 +42,50 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-HP-nOV">
-                                        <rect key="frame" x="31.5" y="36" width="55" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔸 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-HP-nOV">
+                                        <rect key="frame" x="40.5" y="36" width="46" height="28"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alH-fW-g4i">
-                                <rect key="frame" x="266.5" y="714.5" width="99.5" height="99.5"/>
-                                <color key="backgroundColor" red="0.85425478219985962" green="0.49930864572525024" blue="0.63922107219696045" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="alH-fW-g4i" secondAttribute="height" multiplier="1:1" id="Snn-vd-oiT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
-                                <state key="normal" title="Shop">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="wAa-iF-dCY">
+                                <rect key="frame" x="36" y="204" width="342" height="29"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alH-fW-g4i">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="29"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                                        <state key="normal" title="Shop">
+                                            <color key="titleColor" red="0.85425478219999995" green="0.4993086457" blue="0.63922107220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-dp-Z9g">
+                                        <rect key="frame" x="122" y="0.0" width="98" height="29"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                                        <state key="normal" title="Level">
+                                            <color key="titleColor" red="0.75254386660000006" green="0.88212066889999996" blue="0.62348568439999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPO-as-PEY">
+                                        <rect key="frame" x="244" y="0.0" width="98" height="29"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                                        <state key="normal" title="Settings">
+                                            <color key="titleColor" red="0.5628861785" green="0.82866877319999999" blue="0.96080833669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gU4-aF-lig" firstAttribute="centerY" secondItem="A68-ja-BFf" secondAttribute="centerY" id="4K4-qO-pTb"/>
-                            <constraint firstItem="A68-ja-BFf" firstAttribute="bottom" secondItem="alH-fW-g4i" secondAttribute="bottom" constant="48" id="7tg-Gn-V0g"/>
-                            <constraint firstItem="QPO-as-PEY" firstAttribute="top" secondItem="A68-ja-BFf" secondAttribute="top" constant="48" id="B3p-2f-NeX"/>
+                            <constraint firstItem="gU4-aF-lig" firstAttribute="centerY" secondItem="A68-ja-BFf" secondAttribute="centerY" multiplier="1.6" id="4K4-qO-pTb"/>
+                            <constraint firstItem="wAa-iF-dCY" firstAttribute="top" secondItem="y9d-RC-dh7" secondAttribute="bottom" constant="96" id="F4J-za-FI8"/>
                             <constraint firstItem="gU4-aF-lig" firstAttribute="centerX" secondItem="A68-ja-BFf" secondAttribute="centerX" id="ONb-Ak-smj"/>
-                            <constraint firstItem="A68-ja-BFf" firstAttribute="trailing" secondItem="alH-fW-g4i" secondAttribute="trailing" constant="48" id="TDZ-JB-tNw"/>
-                            <constraint firstItem="QPO-as-PEY" firstAttribute="width" secondItem="Xbv-7a-mrr" secondAttribute="width" multiplier="0.24" id="WDB-sn-5bf"/>
-                            <constraint firstItem="A68-ja-BFf" firstAttribute="trailing" secondItem="y9d-RC-dh7" secondAttribute="trailing" constant="48" id="XsY-bs-Am9"/>
-                            <constraint firstItem="A68-ja-BFf" firstAttribute="bottom" secondItem="mbc-dp-Z9g" secondAttribute="bottom" constant="48" id="YXQ-Uj-qln"/>
-                            <constraint firstItem="QPO-as-PEY" firstAttribute="leading" secondItem="A68-ja-BFf" secondAttribute="leading" constant="48" id="ZSL-eH-Qe4"/>
-                            <constraint firstItem="mbc-dp-Z9g" firstAttribute="leading" secondItem="A68-ja-BFf" secondAttribute="leading" constant="48" id="r8s-nZ-uUW"/>
-                            <constraint firstItem="alH-fW-g4i" firstAttribute="width" secondItem="Xbv-7a-mrr" secondAttribute="width" multiplier="0.24" id="vPx-vd-wVT"/>
-                            <constraint firstItem="y9d-RC-dh7" firstAttribute="top" secondItem="A68-ja-BFf" secondAttribute="top" constant="48" id="w8S-9i-qqE"/>
-                            <constraint firstItem="mbc-dp-Z9g" firstAttribute="width" secondItem="Xbv-7a-mrr" secondAttribute="width" multiplier="0.24" id="xaw-uU-5eS"/>
+                            <constraint firstItem="wAa-iF-dCY" firstAttribute="leading" secondItem="A68-ja-BFf" secondAttribute="leading" constant="36" id="W6S-GZ-G9x"/>
+                            <constraint firstItem="A68-ja-BFf" firstAttribute="trailing" secondItem="y9d-RC-dh7" secondAttribute="trailing" constant="24" id="XsY-bs-Am9"/>
+                            <constraint firstItem="A68-ja-BFf" firstAttribute="trailing" secondItem="wAa-iF-dCY" secondAttribute="trailing" constant="36" id="aGb-bB-Gd2"/>
+                            <constraint firstItem="y9d-RC-dh7" firstAttribute="top" secondItem="A68-ja-BFf" secondAttribute="top" id="w8S-9i-qqE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A68-ja-BFf"/>
                     </view>
@@ -106,6 +97,7 @@
                         <outlet property="settingsButton" destination="QPO-as-PEY" id="AcX-KQ-kTk"/>
                         <outlet property="shopButton" destination="alH-fW-g4i" id="S4k-qh-GVa"/>
                         <outlet property="startButton" destination="gU4-aF-lig" id="HsQ-1M-BAY"/>
+                        <outlet property="statsStackView" destination="y9d-RC-dh7" id="P3Q-eu-XPx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jV-Yp-brQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

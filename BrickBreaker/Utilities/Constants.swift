@@ -6,7 +6,7 @@
 //  Copyright © 2019 Warren. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 /// Houses constant values.
 struct Constants {
@@ -15,5 +15,11 @@ struct Constants {
     static let ball = "ball"
     static let game = "Game"
     static let gamescene = "GameScene"
+    static let currency = "currency"
+    static let currentCurrency = "currentCurrency"
+    static let totalCurrency = "totalCurrency"
+    static let level = "level"
+    static let currentLevel = "currentLevel"
+    static let maxLevel = "maxLevel"
     static let brickSize = CGSize(width: 100, height: 20)
 }

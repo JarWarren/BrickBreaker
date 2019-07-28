@@ -37,7 +37,8 @@ class StartState: GKState {
     // MARK: - Custom Methods
     
     func startGame() {
-        guard let levelBricks = scene?.currentLevel?.bricks else { return }
+        guard let levelBricks = scene?.currentLevel?.bricks,
+            let ball = scene?.childNode(withName: Constants.ball) else { return }
         
         var index = 0
         
@@ -53,7 +54,6 @@ class StartState: GKState {
             }
             index += 1
         }
-        
-        // TODO: get rid of gameboard
+        ball.position = scene!.position
     }
 }

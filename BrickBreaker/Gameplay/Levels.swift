@@ -25,7 +25,7 @@ enum Level: Int {
                     nil, nil, nil, nil, nil, nil,
                     nil, nil, nil, nil, nil, nil,
                     nil, nil, nil, nil, nil, nil,
-                    nil, Brick(1), Brick(1), nil, nil, nil]
+                    Brick(), Brick(), Brick(), Brick(), nil, nil]
         case .two:
             return [Brick(), Brick(), Brick(), Brick(), Brick(), Brick(),
                     Brick(), Brick(), Brick(), Brick(), Brick(), Brick(),
