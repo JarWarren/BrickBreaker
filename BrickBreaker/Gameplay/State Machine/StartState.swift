@@ -28,17 +28,18 @@ class StartState: GKState {
         return stateClass == ActiveState.self
     }
     
-    override func update(deltaTime seconds: TimeInterval) {
-
-        startGame()
-        stateMachine?.enter(ActiveState.self)
+    override func didEnter(from previousState: GKState?) {
+        setupGame()
     }
     
     // MARK: - Custom Methods
     
-    func startGame() {
+    func setupGame() {
         guard let levelBricks = scene?.currentLevel?.bricks,
+            let player = scene?.childNode(withName: Constants.player),
             let ball = scene?.childNode(withName: Constants.ball) else { return }
+        ball.position = CGPoint(x: player.position.x, y: player.position.y + 48)
+        ball.physicsBody?.velocity = CGVector(dx: 400, dy: 400)
         var index = 0
         
         for levelBrick in levelBricks {
@@ -53,6 +54,6 @@ class StartState: GKState {
             }
             index += 1
         }
-        ball.position = scene!.position
+        stateMachine?.enter(ActiveState.self)
     }
 }

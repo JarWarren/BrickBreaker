@@ -20,37 +20,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sce-Xc-TaS">
-                                <rect key="frame" x="303.5" y="44" width="86.5" height="64"/>
+                                <rect key="frame" x="303.5" y="44" width="86.5" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktj-bn-WAb">
-                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="30"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZP-O3-cGc">
-                                        <rect key="frame" x="31.5" y="36" width="55" height="28"/>
-                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="73v-oI-iXM">
+                                        <rect key="frame" x="34" y="38" width="52.5" height="30"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="XHl-pK-uiu">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZP-O3-cGc">
+                                                <rect key="frame" x="38" y="0.0" width="14.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="24"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efM-D8-Wtr">
+                                <rect key="frame" x="24" y="44" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.95859087168696033" blue="0.28528515637891783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="pause"/>
+                                <connections>
+                                    <action selector="pauseButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="A5Z-Td-A7T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sce-Xc-TaS" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="3eh-bP-NXV"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="sce-Xc-TaS" secondAttribute="trailing" constant="24" id="8Fg-4x-cde"/>
+                            <constraint firstItem="efM-D8-Wtr" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="24" id="SLm-dg-mQg"/>
+                            <constraint firstItem="efM-D8-Wtr" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="gvn-XO-rCp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
                         <outlet property="currencyLabel" destination="PZP-O3-cGc" id="jwj-oG-mU8"/>
                         <outlet property="levelLabel" destination="Ktj-bn-WAb" id="vxr-6l-Pxp"/>
+                        <outlet property="pauseButton" destination="efM-D8-Wtr" id="iqH-HD-2YQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="coin" width="30" height="30"/>
+        <image name="pause" width="50" height="50"/>
+    </resources>
 </document>

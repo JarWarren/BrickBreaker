@@ -26,6 +26,8 @@
 		7EEAEEAD22ED5D6E001A9303 /* LevelSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EEAEEAC22ED5D6E001A9303 /* LevelSelect.storyboard */; };
 		7EEAEEAF22ED5DDD001A9303 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAEEAE22ED5DDD001A9303 /* LevelViewController.swift */; };
 		7EEAEEB422ED6048001A9303 /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAEEB322ED6048001A9303 /* LevelCell.swift */; };
+		7EEAEEB722ED6BE5001A9303 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EEAEEB622ED6BE5001A9303 /* Settings.storyboard */; };
+		7EEAEEB922ED6CA3001A9303 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAEEB822ED6CA3001A9303 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		7EEAEEAC22ED5D6E001A9303 /* LevelSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LevelSelect.storyboard; sourceTree = "<group>"; };
 		7EEAEEAE22ED5DDD001A9303 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
 		7EEAEEB322ED6048001A9303 /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
+		7EEAEEB622ED6BE5001A9303 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		7EEAEEB822ED6CA3001A9303 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				7E1622A122EA15620033BCB4 /* Game.storyboard */,
-				7E1622A622EA15630033BCB4 /* LaunchScreen.storyboard */,
 				7E1622B722EA379D0033BCB4 /* Main.storyboard */,
 				7EEAEEAC22ED5D6E001A9303 /* LevelSelect.storyboard */,
+				7E1622A622EA15630033BCB4 /* LaunchScreen.storyboard */,
+				7EEAEEB622ED6BE5001A9303 /* Settings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				7EEAEEAE22ED5DDD001A9303 /* LevelViewController.swift */,
+				7EEAEEB822ED6CA3001A9303 /* SettingsViewController.swift */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 				7E1622A522EA15630033BCB4 /* Assets.xcassets in Resources */,
 				7E1622A822EA15630033BCB4 /* LaunchScreen.storyboard in Resources */,
 				7EEAEEAD22ED5D6E001A9303 /* LevelSelect.storyboard in Resources */,
+				7EEAEEB722ED6BE5001A9303 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +314,7 @@
 				7EEAEE9A22EA4E59001A9303 /* StartState.swift in Sources */,
 				7EEAEEA822ED16FE001A9303 /* Constants.swift in Sources */,
 				7E1622B422EA1E670033BCB4 /* Brick.swift in Sources */,
+				7EEAEEB922ED6CA3001A9303 /* SettingsViewController.swift in Sources */,
 				7EEAEE9C22EA4E93001A9303 /* ActiveState.swift in Sources */,
 				7E1622A022EA15620033BCB4 /* GameViewController.swift in Sources */,
 				7EEAEEAB22ED20A4001A9303 /* Settings.swift in Sources */,

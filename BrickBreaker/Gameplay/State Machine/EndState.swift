@@ -26,11 +26,11 @@ class EndState: GKState {
         return stateClass == StartState.self
     }
     
-    override func update(deltaTime seconds: TimeInterval) {
+    override func didEnter(from previousState: GKState?) {
         // advance a level
         guard let oldLevel = scene?.currentLevel?.intValue else { return }
         scene?.currentLevel = Level(rawValue: oldLevel + 1)
-        Settings.shared.updateLevelsAndLoot(to: (oldLevel + 1))
+        Settings.shared.autoSaveStats(currentLevel: (oldLevel + 1))
         
         // reset bricks
         scene?.children.forEach {

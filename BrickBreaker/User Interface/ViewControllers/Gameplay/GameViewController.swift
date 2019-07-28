@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var pauseButton: UIButton!
+    weak var scene: SKScene!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -31,6 +33,30 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateCurrency), name: Notification.Name(Constants.currency), object: nil)
     }
     
+    // MARK: - Actions
+    
+    @IBAction func pauseButtonTapped(_ sender: UIButton) {
+        
+        if sender.imageView?.image == UIImage(named: "pause") {
+            scene.isPaused = true
+            pauseButton.backgroundColor = BrickColor.green.uiColor
+            pauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            
+            // TODO: move pause button to node
+        } else {
+            sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 0.9568510652, blue: 0, alpha: 1)
+            scene.isPaused = false
+        }
+    }
+    
+    @objc func resetButtonTapped(_ sender: Any) {
+    }
+    
+    @objc func quitButtonTapped(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     // MARK: - Custom Methods
     
     func setupScene() {
@@ -38,6 +64,7 @@ class GameViewController: UIViewController {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: Constants.gamescene) as? GameScene,
                 let currentLevel = Level(rawValue: Settings.shared.levels.current) {
+                self.scene = scene
                 scene.delegate = self
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFit
@@ -58,12 +85,13 @@ class GameViewController: UIViewController {
     }
     
     @objc func updateCurrency() {
-        currencyLabel.text = "🔸 \(Settings.shared.currencies.current)"
+        currencyLabel.text = "\(Settings.shared.currencies.current)"
     }
 }
 
 extension GameViewController: SKSceneDelegate {
     func endGame() {
+        Settings.shared.abortGame()
         dismiss(animated: false)
     }
 }
